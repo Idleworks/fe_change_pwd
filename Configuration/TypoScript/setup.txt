@@ -20,6 +20,9 @@ plugin.tx_fechangepwd {
         # The pid to redirect to if a password change is required (usually the page with the Plugin of the extension)
         changePasswordPid =
 
+        # Forward URL parameters to changePasswordPid's page
+        enableAddQueryString = 0
+
         passwordComplexity {
             minLength = 6
             capitalCharCheck = 1

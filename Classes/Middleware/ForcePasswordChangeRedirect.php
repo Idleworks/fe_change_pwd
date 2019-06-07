@@ -83,7 +83,7 @@ class ForcePasswordChangeRedirect implements MiddlewareInterface
             }
             $url = GeneralUtility::makeInstance(ContentObjectRenderer::class, $this->controller)->typoLink_URL([
                 'parameter' => $parameter,
-                'addQueryString' => true,
+                'addQueryString' => $pageAccessService->getEnableAddQueryString(),
                 'addQueryString.' => ['exclude' => 'id'],
                 // ensure absolute URL is generated when having a valid Site
                 'forceAbsoluteUrl' => $GLOBALS['TYPO3_REQUEST'] instanceof ServerRequestInterface

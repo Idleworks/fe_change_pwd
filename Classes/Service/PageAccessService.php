@@ -76,6 +76,17 @@ class PageAccessService
     }
 
     /**
+     * Returns true if addQueryString should be used for redirect page
+     *
+     * @return bool
+     */
+    public function getEnableAddQueryString()
+    {
+        $settings = $this->settingsService->getSettings();
+        return (bool)$settings['enableAddQueryString'];
+    }
+
+    /**
      * Returns, if the given page uid is configured as included for redirects
      *
      * @param int $pageUid
