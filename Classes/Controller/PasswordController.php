@@ -76,7 +76,7 @@ class PasswordController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     public function updateAction(ChangePassword $changePassword = NULL)
     {
         if ($changePassword === NULL) {
-            $this->rediret('edit');
+            $this->redirect('edit');
         }
         $this->frontendUserService->updatePassword($changePassword->getPassword1());
         if (isset($this->settings['afterPasswordChangeAction']) &&
